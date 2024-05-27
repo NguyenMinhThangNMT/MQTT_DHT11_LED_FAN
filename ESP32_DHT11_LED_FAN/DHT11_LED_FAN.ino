@@ -16,7 +16,7 @@
 //*************Thiet lap server MQTT**********************/
 const char* ssid = "Thanh Binh Nguyen";
 const char* password = "0972047678";
-String GOOGLE_SCRIPT_ID = "AKfycbxMcuS1R_8yG36v5uYQZRiKLLPSXgVCg_vykIO1ewlHjQp31-GDP9iT2Smy-Mtky4Yiyg";
+
 
 #define MQTT_SERVER "robotics.cloud.shiftr.io"
 #define MQTT_PORT 1883
@@ -26,13 +26,16 @@ String GOOGLE_SCRIPT_ID = "AKfycbxMcuS1R_8yG36v5uYQZRiKLLPSXgVCg_vykIO1ewlHjQp31
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
+
 DHT dht(DHTPIN, DHTTYPE);
+//lcd
 int lcdColumns = 16;
 int lcdRows = 2;
 LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows);
+//value 
 float h,t;
 unsigned long previousMillis=0;
-String param = "";
+
 
 //icon nhiet do
 byte icontemp[8] =
